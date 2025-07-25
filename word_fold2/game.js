@@ -26,17 +26,17 @@ const boards = [
     ["I", "G", "A", "P", "A"]],
     words: ["CHERRY", "PAPAYA", "BANANA", "PEAR", "FIG"]
     },
-    ]
-    let score = 0;
-    let board = 0;
-    let selectedX = -1;
-    let selectedY = -1;
-    let primaryColor = "papayawhip";
-    let secondaryColor = "linen";
-    let tertiaryColor = "black";
-    const CELLS = makeCellList();
-    let confettiHeight = 0;
-    reset();
+]
+let score = 0;
+let board = 0;
+let selectedX = -1;
+let selectedY = -1;
+let primaryColor = "papayawhip";
+let secondaryColor = "linen";
+let tertiaryColor = "black";
+const CELLS = makeCellList();
+let confettiHeight = 0;
+reset();
     
     function colorPalette() {
     switch (board) {
