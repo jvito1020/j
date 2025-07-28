@@ -1,55 +1,17 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: papayawhip
-    }
-    
-    h1{
-    margin: 0;
-    font-family: 'Times New Roman', Times, serif;
-    }
-    #cell-holder {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    aspect-ratio: 1 / 1;
-    width: 50%;
-    gap: 8px;
-    background-color: papayawhip
-    }
-    
-    .cell{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: xx-large;
-    background: linen;
-    border-color: black;
-    border-width: 5px;
-    border-style: solid;
-    overflow-wrap: anywhere;
-    }
-    
-    .cell.selected{
-    border: yellow 8px solid;
-    }
-    
-    body {
-    font-family: Arial, Helvetica, sans-serif;
     display:flex;
     flex-direction: column;
     align-items:center;
     background-color:var(--primaryColor);
     overflow: hidden;
-    }
-    
-    h1{
+}
+
+h1{
     margin: 0;
-    }
-    
-    #cell-holder{
+}
+
+#cell-holder{
     display:grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -59,18 +21,18 @@ body {
     background-color: var(--primaryColor);
     padding: 15px;
     border-radius: 15px;
-    }
-    
-    .header{
+}
+
+.header{
     margin: 5px;
     padding: 0px 25px;
     background-color: var(--secondaryColor);
     color: var(--primaryColor);
     font-size: xx-large;
     border-radius: 15px;
-    }
-    
-    .cell{
+}
+
+.cell{
     display:flex;
     justify-content: center;
     align-items:center;
@@ -79,36 +41,37 @@ body {
     color: var(--primaryColor);
     border-radius: 15px;
     overflow-wrap: anywhere;
-    }
-    
-    .cell.selected{
-    border: var(--tertiaryColor) 8px solid;
-    }
-    
-    #headerHolder{
+}
+
+.cell.selected{
+    border: var(--tertiaryColor)   8px solid;
+}
+
+#headerHolder{
     display: flex;
     justify-content: center;
     align-items:center;
     font-size: xx-large;
-    }
-    #buttonHolder{
+}
+#buttonHolder{
     display: flex;
     justify-content: center;
     align-items:center;
     font-size: xx-large;
-    }
-    
-    .button{
+}
+
+.button{
     margin: 5px;
     padding: 0px 25px;
     background-color: var(--secondaryColor);
     color: var(--primaryColor);
     font-size: x-large;
     border-radius: 15px;
-    }
-    
-    #confetti{
+}
+
+#confetti{
     transform: translateY(var(--confettiY));
     width: var(--confettiWidth);
     height: var(--confettiHeight);
-    }
+    
+}
