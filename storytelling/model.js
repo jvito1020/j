@@ -1,12 +1,18 @@
+import View from "./view.js";
+
 let story = "";
 let initialStory = "";
 let currentLanguage = "en-US"; // language code
 let currentLanguageName = "English";
 
-const GEMINI_API_KEY = "AIzaSyAfvZzou9aJRYY4owRMIrWith1E3Zq5P7s";
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
 
 async function generateStory(prompt) {
+    const GEMINI_API_KEY = View.getKey();
+    if (!GEMINI_API_KEY) {
+        alert("Your key is empty. Please add a key!")
+    }
+    const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
+
     const body = {
         contents: [{
             parts: [{
@@ -28,7 +34,7 @@ async function generateStory(prompt) {
 
 function appendLine(role, text) {
     story += `\n${role}: ${text}`;
-    return story; 
+    return story;
 }
 
 function getStory() {
@@ -36,7 +42,7 @@ function getStory() {
 }
 
 function getLanguage() {
-    return {lang: currentLanguage, name: currentLanguageName};
+    return { lang: currentLanguage, name: currentLanguageName };
 }
 
 function setLanguage(lang, name) {
@@ -49,7 +55,7 @@ function resetStory() {
     return story;
 }
 
-function initializeStory(initialText){
+function initializeStory(initialText) {
     story = initialText;
     initialStory = initialText;
     return story;
