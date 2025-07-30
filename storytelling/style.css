@@ -9,13 +9,20 @@
  * ============================================================================= */
 
 /* Main body styling - centers content and sets overall appearance */
+
+#grad1 {
+  height: 855px;
+  background-color: red; /* For browsers that do not support gradients */
+  background-image: linear-gradient(to bottom right, red, yellow);
+}
+
 body {
   font-family: Arial, sans-serif;  /* Clean, readable font */
-  background: #f4f4f4;            /* Light gray background */
+  background: #83acbd;            /* Light gray background */
   padding: 30px;                  /* Space around content */
   max-width: 700px;               /* Limit width for readability */
   margin: auto;                   /* Center content horizontally */
-  color: #333;                    /* Dark gray text for good contrast */
+  color: #461003;                    /* Dark gray text for good contrast */
 }
 
 /* =============================================================================
@@ -26,7 +33,7 @@ body {
 h1 {
   text-align: center;             /* Center the heading */
   margin-bottom: 20px;            /* Space below heading */
-  color: #222;                    /* Darker color for emphasis */
+  color: #092834;                    /* Darker color for emphasis */
 }
 
 /* =============================================================================
@@ -60,11 +67,11 @@ select {
 /* Main story text display container */
 #story {
   white-space: pre-wrap;          /* Preserve line breaks and spacing */
-  background: #fff;               /* White background for contrast */
+  background: linear-gradient(to top left, red, yellow);;               /* White background for contrast */
   padding: 15px;                  /* Inner spacing for readability */
-  border: 1px solid #ccc;         /* Light border definition */
+  border: 1px solid #ffffff;         /* Light border definition */
   border-radius: 6px;             /* Rounded corners for modern look */
-  min-height: 200px;              /* Minimum height to prevent collapse */
+  min-height: 300px;              /* Minimum height to prevent collapse */
   margin-bottom: 20px;            /* Space below story area */
   font-size: 18px;                /* Larger text for story readability */
   line-height: 1.5;               /* Comfortable line spacing */

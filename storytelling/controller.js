@@ -8,11 +8,11 @@ let aiRequestInProgress = false;
 
 async function handleVoiceInput(event) {
     const userText = event.results[0][0].transcript;
-    const updateStory = Model.appendLine("Player", userText);
-    View.updateStory(updateStory);
+    const updatedStory = Model.appendLine("Player", userText);
+    View.updateStory(updatedStory);
     View.toggleLoading(true);
     aiRequestInProgress = true;
-    const aiResponse = await Model.generateStory(updateStory + "\nNarrator:");
+    const aiResponse = await Model.generateStory(updatedStory + "\nNarrator:");
     aiRequestInProgress = false;
     View.toggleLoading(false);
     const finalStory = Model.appendLine("Narrator", aiResponse);
@@ -21,7 +21,7 @@ async function handleVoiceInput(event) {
 }
 
 function handleLanguageChange() {
-    const selectOption = View.getLanguageSelect().selectOptions[0];
+    const selectOption = View.getLanguageSelect().selectedOptions[0];
     const newLang = selectOption.value;
     const newLangName = selectOption.dataset.name;
     Model.setLanguage(newLang, newLangName);
@@ -40,13 +40,13 @@ function handleStopSpeaking() {
 
     setTimeout(() => {
         View.speakText("Story reset! Help me build a story! Start a sentence and I will continue it.",
-            Model.getLanguage().lang)
+            Model.getLanguage().lang);
     }, 500);
 }
 
 function handlePauseResume(e) {
     const newState = View.pauseOrResumeSpeaking();
-    e.target.textContent = newState ==="Pause" ? "⏸️Pause" : "▶️Resume";
+    e.target.textContent = newState ==="Pause" ? "⏸️ Pause" : "▶️ Resume";
 }
 
 function init() {
@@ -57,7 +57,7 @@ function init() {
 
     setTimeout(() => {
         View.speakText("Story reset! Help me build a story! Start a sentence and I will continue it.",
-            Model.getLanguage().lang)
+            Model.getLanguage().lang);
     }, 500);
 
     View.getSpeakBtn().onclick = () => {
@@ -77,7 +77,7 @@ function init() {
 
     View.getLanguageSelect().addEventListener("change", handleLanguageChange);
 
-    View.getStopSpeakBtn.onclick = handleStopSpeaking;
+    View.getStopSpeakBtn().onclick = handleStopSpeaking;
 
     View.getPauseSpeakBtn().onclick = handlePauseResume;
 }
