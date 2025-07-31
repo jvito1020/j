@@ -10,6 +10,7 @@ async function generateStory(prompt) {
     const GEMINI_API_KEY = View.getKey();
     if (!GEMINI_API_KEY) {
         alert("Your key is empty. Please add a key!")
+        return;
     }
     const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
 
